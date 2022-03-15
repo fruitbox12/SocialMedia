@@ -1,6 +1,6 @@
 import React from "react";
 import Feed from "../components/Feed";
-import Rightbar from "../components/Rightbar";
+import ProfileSidebar from "../components/ProfileSidebar";
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 import "../styles/Profile.css";
@@ -31,7 +31,7 @@ function Profile() {
           </div>
           <div className="profileRightBottom">
             <Feed />
-            <Rightbar profile />
+            <ProfileSidebar />
           </div>
         </div>
       </div>

@@ -1,0 +1,42 @@
+.ProfileSidebar {
+  flex: 3.5;
+}
+.ProfileSidebarWrapper {
+  padding: 20px 20px 0 0;
+}
+
+.ProfileSidebarTitle {
+  margin-bottom: 20px;
+  text-align: right;
+}
+.ProfileSidebarInfo {
+  margin-bottom: 30px;
+  text-align: right;
+}
+.ProfileSidebarInfoKey {
+  font-weight: 500;
+  color: #555;
+}
+.ProfileSidebarInfoValue {
+  font-weight: 300;
+  margin-right: 6px;
+}
+.ProfileSidebarFollowings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.ProfileSidebarFollowing {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding-left: 10px;
+  text-align: center;
+}
+.ProfileSidebarFollowingImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
