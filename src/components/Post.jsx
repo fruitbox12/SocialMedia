@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Post.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
-function Post() {
+import { Users } from "../dummyData";
+
+function Post({ post }) {
+  const [like, setLike] = useState(post.like);
+  const [isLiked, setIsLiked] = useState(false);
+
+  const likeHandler = () => {
+    setLike(isLiked ? like - 1 : like + 1);
+    setIsLiked(!isLiked);
+  };
   return (
     <div className="post">
       <div className="postWrapper">
@@ -9,28 +18,40 @@ function Post() {
           <div className="postTopLeft">
             <img
               className="postProfileImg"
-              src="/assets/person/1.jpeg"
+              src={Users.filter((u) => u.id === post.userId)[0].profilePicture}
               alt=""
             />
-            <span className="postUserName">مهدی پریوش</span>
-            <span className="postDate">لحظاتی پیش</span>
+            <span className="postUserName">
+              {Users.filter((u) => u.id === post.userId)[0].username}
+            </span>
+            <span className="postDate">{post.date}</span>
           </div>
           <div className="postTopRight">
             <BsThreeDotsVertical />
           </div>
         </div>
         <div className="postCenter">
-          <span className="postText">سلام این اولین نوشته من است</span>
-          <img className="PostImg" src="/assets/post/1.jpeg" alt="" />
+          <span className="postText">{post.desc}</span>
+          <img className="PostImg" src={post.photo} alt="" />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
-            <img className="likeIcon" src="/assets/like.png" alt="" />
-            <img className="likeIcon" src="/assets/heart.png" alt="" />
-            <span className="likeCounter">این نوشته ۳۲ بار لایک شده</span>
+            <img
+              onClick={likeHandler}
+              className="likeIcon"
+              src="/assets/like.png"
+              alt=""
+            />
+            <img
+              onClick={likeHandler}
+              className="likeIcon"
+              src="/assets/heart.png"
+              alt=""
+            />
+            <span className="likeCounter">این نوشته {like} بار لایک شده</span>
           </div>
           <div className="postBottomRight">
-            <span className="postCommentText">۹ نظرات</span>
+            <span className="postCommentText"> {post.comment} نظرات</span>
           </div>
         </div>
       </div>

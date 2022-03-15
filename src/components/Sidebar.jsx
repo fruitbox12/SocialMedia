@@ -11,6 +11,8 @@ import {
 } from "react-icons/bs";
 import { FaUserGraduate } from "react-icons/fa";
 import { HiUserGroup } from "react-icons/hi";
+import { Users } from "../dummyData";
+import Closefrined from "./Closefrined";
 
 function Sidebar() {
   return (
@@ -57,22 +59,9 @@ function Sidebar() {
         <button className="sidebarButton">دیدن موارد بیشتر</button>
         <hr className="sidebarHr" />
         <ul className="sidebarFriendList">
-          <li className="sidebarFriend">
-            <img
-              className="siderbarFrindImg"
-              src="/assets/person/2.jpeg"
-              alt=""
-            />
-            <span className="sidebarFriendName">مهدی پریوش</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              className="siderbarFrindImg"
-              src="/assets/person/2.jpeg"
-              alt=""
-            />
-            <span className="sidebarFriendName">مهدی پریوش</span>
-          </li>
+          {Users.map((u) => (
+            <Closefrined key={u.id} user={u} />
+          ))}
         </ul>
       </div>
     </div>
