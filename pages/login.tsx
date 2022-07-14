@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import Register from "../components/register";
 
 type loginProps = {};
 
 const login: React.FC<loginProps> = () => {
+  const [showSignUp, setShowSignUp] = useState(false);
+
   return (
     <div className="bg-fborange w-full h-screen flex flex-col justify-between">
+      <Register show={showSignUp} setShow={setShowSignUp} />
       <div className="flex justify-center items-center  mx-5 py-40 px-6">
         <div className="flex flex-col items-start content-start -mt-32">
           <img
@@ -37,7 +41,10 @@ const login: React.FC<loginProps> = () => {
             </p>
             <div className="w-full h-[1px] bg-fbgray"></div>
 
-            <button className="w-[55%]  border-none rounded-md text-base p-4 bg-fbgreen text-white font-semibold mt-2.5 cursor-pointer transition-all duration-300 ease-in-out hover:bg-fbgreendark">
+            <button
+              onClick={() => setShowSignUp(true)}
+              className="w-[55%]  border-none rounded-md text-base p-4 bg-fbgreen text-white font-semibold mt-2.5 cursor-pointer transition-all duration-300 ease-in-out hover:bg-fbgreendark"
+            >
               Create New Account
             </button>
           </div>
