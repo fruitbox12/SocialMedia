@@ -20,7 +20,7 @@ type HeaderProps = {};
 
 const Header: React.FC<HeaderProps> = () => {
   return (
-    <div className="sticky top-0 z-50 bg-white flex items-center p-2 shadow-md ">
+    <div className="sticky top-0 z-50 bg-white flex items-center p-1 shadow-md ">
       <div className="flex items-center ">
         <Image
           src="http://links.papareact.com/5me"
