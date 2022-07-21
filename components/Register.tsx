@@ -5,7 +5,7 @@ type registerProps = {
   show: boolean;
   setShow: (show: boolean) => void;
 };
-function Test(props: registerProps) {
+function Register(props: registerProps) {
   const [dateDay, setDateDay] = useState<Array<number>>([]);
   const [dateYear, setDateYear] = useState<Array<number>>([]);
   const [isCustom, setIsCustom] = useState(false);
@@ -261,4 +261,4 @@ function Test(props: registerProps) {
   );
 }
 
-export default Test;
+export default Register;
