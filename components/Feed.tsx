@@ -1,5 +1,6 @@
 import React from "react";
 import InputBox from "./InputBox";
+import Post from "./Post";
 import Stories from "./Stories";
 
 function Feed() {
@@ -8,6 +9,7 @@ function Feed() {
       <div className="mx-auto max-w-xl md:max-w-lg lg:max-w-2xl">
         <Stories />
         <InputBox />
+        <Post />
       </div>
     </div>
   );
